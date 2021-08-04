@@ -13,7 +13,23 @@
         "sstream": "cpp",
         "thread": "cpp",
         "tuple": "cpp",
-        "variant": "cpp"
+        "variant": "cpp",
+        "string_view": "cpp",
+        "regex": "cpp",
+        "ratio": "cpp",
+        "bitset": "cpp",
+        "initializer_list": "cpp",
+        "utility": "cpp",
+        "valarray": "cpp",
+        "deque": "cpp",
+        "forward_list": "cpp",
+        "list": "cpp",
+        "string": "cpp",
+        "unordered_map": "cpp",
+        "unordered_set": "cpp",
+        "*.tcc": "cpp",
+        "complex": "cpp",
+        "ostream": "cpp"
     },
     "cmake.configureOnOpen": false
 }

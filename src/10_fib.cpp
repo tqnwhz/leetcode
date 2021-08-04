@@ -18,7 +18,16 @@ class Solution {
     }
     return fibs[n];
   }
+
+  int fib1(int n) {
+    while (fibs.size() <= n + 1) {
+      int res = (fibs[fibs.size() - 1] + fibs[fibs.size() - 2]) % 1000000007;
+      fibs.push_back(res);
+    }
+    return fibs[n];
+  }
 };
+
 int main() {
   Solution s;
 

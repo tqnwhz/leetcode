@@ -29,8 +29,8 @@ class Solution {
 
   bool findNumberIn2DArray(vector<vector<int>>& matrix, int target) {
     for (auto& m : matrix) {
-      auto res = binSearch(m, 0, m.size() - 1, target);
-      if (res != -1) {
+      auto res = lower_bound(m.begin(), m.end(), target) - m.begin();
+      if (res < m.size() && m[res] == target) {
         return true;
       }
     }
@@ -42,10 +42,6 @@ int main() {
   Solution s;
   vector<int> nums = {5, 7, 7, 8, 8, 10};
 
-  auto res = s.searchRange(nums, 6);
-  for (auto r : res) {
-    cout << r << ",";
-  }
   cout << endl;
   return 0;
 }

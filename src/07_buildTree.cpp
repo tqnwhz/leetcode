@@ -35,6 +35,29 @@ class Solution {
     return root;
   }
 };
+
+class Solution {
+ public:
+  TreeNode* buildTree(vector<int>& preorder, vector<int>& inorder) {
+    if (preorder.empty()) {
+      return NULL;
+    }
+    auto root = new TreeNode(preorder[0]);
+    auto idx =
+        find(inorder.begin(), inorder.end(), root->val) - inorder.begin();
+    auto leftpreorder =
+        vector(preorder.begin() + 1, preorder.begin() + 1 + idx);
+    auto leftinorder = vector(inorder.begin(), inorder.begin() + idx);
+    root->left = buildTree(leftpreorder, leftinorder);
+
+    auto rightpreorder = vector(preorder.begin() + 1 + idx, preorder.end());
+    auto rightinorder = vector(inorder.begin() + idx + 1, inorder.end());
+    root->right = buildTree(rightpreorder, rightinorder);
+
+    return root;
+  }
+};
+
 int main() {
   system("pause");
   return 0;

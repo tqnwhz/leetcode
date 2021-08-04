@@ -1,0 +1,20 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+class Solution {
+ public:
+  void rotate(vector<int>& nums, int k) {
+    reverse(nums.begin(), nums.end());
+    k = k % nums.size();
+    reverse(nums.begin(), nums.begin() + k);
+    reverse(nums.begin() + k, nums.end());
+  }
+};
+
+int main() {
+  Solution s;
+
+  system("pause");
+  return 0;
+}
